@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: microweb
+    ports:
+      - "8087:35000"
+    environment:
+      - PORT=35000
+    networks:
+      - micronet
+
+  db:
+    image: mongo:6.0
+    container_name: microdb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - micronet
+
+volumes:
+  mongodb_data:
+
+networks:
+  micronet:
+    driver: bridge
