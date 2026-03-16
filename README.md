@@ -1,6 +1,6 @@
 # TDSE LAB 7 Manuel Alejandro Guarnizo Garcia
 
-
+In this lab, we successfully containerized a custom MicroSpringBoot framework application using Docker and deployed it both locally and to the cloud. We began by building the Java application with Maven, then created a Dockerfile using eclipse-temurin:17-jdk as the base image to package the compiled classes. We ran three independent containers locally, mapping ports 34000-34002 to the application's internal port 35000, and verified functionality through browser access. Next, we configured Docker Compose to orchestrate the application alongside a MongoDB container. Finally, we tagged and prepared the image for deployment by pushing it to Docker Hub under the repository manuelguarnizo/dockerrepoapp, making it ready for deployment on an AWS EC2 instance, thus completing the end-to-end containerization and cloud deployment pipeline.
 
 
 ### We add the pom and the dockerfile 
